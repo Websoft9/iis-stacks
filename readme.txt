@@ -1,5 +1,5 @@
 
-Websoft9 IIS Stack 
+Websoft9 IIS Stack V Framework4.7.2-IIS7.5
 ===========================
 
 1. OVERVIEW
@@ -25,7 +25,7 @@ Websoft9 IIS stack ships with the following software versions:
 - .NET Frame core runtime 2.2.2
 - .NET Frame core SDK 2.1.504/2.2.504
 - .NET Framework 4.7.2
-- IIS 
+- IIS 7.5
 
 --- Other components of IIS ---
 

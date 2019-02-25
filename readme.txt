@@ -20,6 +20,13 @@ Websoft9 IIS stack ships with the following software versions:
 
 ********
 
+- MySQL 5.6.43
+- MySQL-Front 6.1
+- .NET Frame core runtime 2.2.2
+- .NET Frame core SDK 2.1.504/2.2.504
+- .NET Framework 4.7.2
+- IIS 
+
 --- Other components of IIS ---
 
 

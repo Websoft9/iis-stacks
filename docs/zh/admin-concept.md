@@ -6,7 +6,7 @@
 
 Windows 系统可以同时支持 Linux 容器 和 Windows 容器两种方案。  
 
-但 Windows 容器并不支持以 RDP 模式的图形化远程桌面操作。  
+但 Windows 容器并不支持以 RDP 模式的图形化远程桌面操作，Windows 容器是为持续集成而生。  
 
 ## 命令
 
@@ -120,6 +120,8 @@ SandBox 是 Windows 下的一种虚拟化技术。但它的用法诸多限制：
     # Shell 命令 + Jason 响应文件
     vs_Community.exe --in customInstall.json
     ```
+
+3. 完成 VS IDE 安装后，并不代表安装了各种不同开发语言所需的组件。因此，VS 在打开项目工程的时候，会检查工程的类型，推荐开发者安装工程所需的引用环境。
 
 如果想下载 VS 的安装包，也需要通过 **安装管理器** 去实现。
 

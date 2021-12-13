@@ -1,0 +1,26 @@
+# escape=`
+
+# Use the latest Windows Server Core image with .NET Framework 4.8.
+FROM mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-ltsc2019
+
+# Restore the default Windows shell for correct batch processing.
+SHELL ["cmd", "/S", "/C"]
+
+RUN `
+    # Download the Build Tools bootstrapper.
+    curl -SL --output vs_community.exe https://aka.ms/vs/16/release/vs_community.exe `
+    `
+    # Install Build Tools with the Microsoft.VisualStudio.Workload.AzureBuildTools workload, excluding workloads and components with known issues.
+    && (start /w vs_community.exe --quiet --wait --norestart --nocache modify `
+        --installPath "%ProgramFiles(x86)%\Microsoft Visual Studio" `
+        --add Microsoft.VisualStudio.Workload.CoreEditor `
+        --add Microsoft.VisualStudio.Workload.ManagedDesktop `
+        --add Microsoft.VisualStudio.Component.VC.Tools.x86.x64 `
+        || IF "%ERRORLEVEL%"=="3010" EXIT 0) `
+    `
+    # Diplay directory
+    && dir
+
+# Define the entry point for the docker container.
+# This entry point starts the developer command prompt and launches the PowerShell shell.
+ENTRYPOINT ["C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\Common7\\Tools\\VsDevCmd.bat", "&&", "powershell.exe", "-NoLogo", "-ExecutionPolicy", "Bypass"]

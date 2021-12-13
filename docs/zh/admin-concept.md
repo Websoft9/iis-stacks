@@ -84,6 +84,20 @@ SandBox 是 Windows 下的一种虚拟化技术。但它的用法诸多限制：
 
 ## Windows Admin Center
 
+## MSBuild
+
+[MSBuild](https://docs.microsoft.com/zh-cn/visualstudio/msbuild/msbuild) 又名 Microsoft 编译引擎，是一个用于编译应用程序的平台。 Visual Studio 会使用 MSBuild，但 MSBuild 不依赖于 Visual Studio。 通过在项目或解决方案文件中调用 msbuild.exe，可以在未安装 Visual Studio 的环境中安排和编译产品。  
+
+> MSBuild 在 Windows 系统中的地位等同于 Linux 系统中的 CMake。  
+
+Visual Studio 使用 MSBuild 来加载和编译托管项目。 Visual Studio 中的项目文件（.csproj、.vbproj、vcxproj 等）包含 MSBuild XML 代码，当你使用 IDE 来编译项目时，此代码就会运行。 Visual Studio 项目会导入所有必要的设置和编译过程来执行典型的开发工作，但你可以从 Visual Studio 内或通过使用 XML 编辑器对其进行扩展或修改。
+
+```
+MSBuild.exe MyProj.proj -property:Configuration=Debug
+```
+
+在 Visual Studio 中编译项目与通过 MSBuild 可执行文件直接调用 MSBuild 或使用 MSBuild 对象模型启动编译之间，有一些显著的区别。
+
 ## IIS
 
 ## Visual Studio

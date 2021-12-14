@@ -8,6 +8,12 @@ Windows 系统可以同时支持 Linux 容器 和 Windows 容器两种方案。
 
 但 Windows 容器并不支持以 RDP 模式的图形化远程桌面操作，Windows 容器是为持续集成而生。  
 
+### Dockerfile
+
+Windows 上的 Dockerfile 语法与 Linux 有一定的区别，所幸微软官方针对这些差异提供了较为详细的[文档](https://docs.microsoft.com/en-us/virtualization/windowscontainers/manage-docker/manage-windows-dockerfile)说明。
+
+
+
 ## 命令
 
 Windows 有两个命令 shell：命令 [shell](https://docs.microsoft.com/zh-cn/windows-server/administration/windows-commands/windows-commands) 和 [PowerShell](https://docs.microsoft.com/zh-cn/powershell/scripting/overview)。 每个 shell 是一种软件程序，它提供你与操作系统或应用程序之间的直接通信，同时提供用于自动执行 IT 操作的环境。  
@@ -74,6 +80,7 @@ Get-Location
 Install-PackageProvider -Name NuGet -Force
 
 ```
+
 
 ## SandBox 沙箱
 
